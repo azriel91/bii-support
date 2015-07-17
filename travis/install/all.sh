@@ -1,10 +1,9 @@
 #! /bin/sh
 SCRIPT_DIR=$(dirname $0)
 
-sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-sudo apt-get update -qq
+$SCRIPT_DIR/apt_update.sh
 
-$SCRIPT_DIR/install-cmake.sh
-$SCRIPT_DIR/install-clang.sh
-$SCRIPT_DIR/install-g++.sh
-$SCRIPT_DIR/install-biicode.sh
+$SCRIPT_DIR/cmake.sh
+$SCRIPT_DIR/clang.sh
+$SCRIPT_DIR/g++.sh
+$SCRIPT_DIR/biicode.sh
