@@ -1,5 +1,5 @@
 #! /bin/sh
-set -e
+set -ex
 
 if [ "$CXX" = "clang++" ]; then
   sudo apt-get install -qq clang;

@@ -1,5 +1,5 @@
 #! /bin/sh
-set -e
+set -ex
 
 if [ "$CXX" = "g++" ]; then
   sudo apt-get install -qq g++-4.8;

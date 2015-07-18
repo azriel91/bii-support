@@ -1,4 +1,6 @@
 #! /bin/sh
+set -ex
+
 SCRIPT_DIR=$(dirname $0)
 
 $SCRIPT_DIR/apt_update.sh

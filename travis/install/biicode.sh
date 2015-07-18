@@ -1,5 +1,5 @@
 #! /bin/sh
-set -e
+set -ex
 
 SCRIPT_DIR=$(dirname $0)
 wget -O "${SCRIPT_DIR}/bii-ubuntu64.deb" http://www.biicode.com/downloads/latest/ubuntu64
