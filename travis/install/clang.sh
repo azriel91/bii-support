@@ -1,4 +1,6 @@
 #! /bin/sh
+set -e
+
 if [ "$CXX" = "clang++" ]; then
   sudo apt-get install -qq clang;
   export CXX="clang++" CC="clang";
