@@ -9,3 +9,4 @@ $SCRIPT_DIR/cmake.sh
 $SCRIPT_DIR/clang.sh
 $SCRIPT_DIR/g++.sh
 $SCRIPT_DIR/biicode.sh
+$SCRIPT_DIR/valgrind.sh
