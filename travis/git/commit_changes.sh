@@ -1,14 +1,10 @@
 #! /bin/sh
 set -e
 
+. $(dirname $0)/internal/commit_messages.sh
+
 # Protection if user has not defined environmental variables
 IS_MISSING_VARS=false
-if [ "x${COMMIT_IGNORE_BUILD}x" = xx ]; then
-  >&2 printf "%s\n%s\n" \
-             "Please set the COMMIT_IGNORE_BUILD global environmental variable in .travis.yml:" \
-             "  - COMMIT_IGNORE_BUILD=\"Promoted version. ***travis***\""
-  IS_MISSING_VARS=true
-fi
 
 if [ "x${GITHUB_TOKEN}x" = xx ]; then
   >&2 printf "%s\n%s\n%s\n" \
