@@ -6,7 +6,7 @@ set -e
 # Protection if user has not defined environmental variables
 IS_MISSING_VARS=false
 
-if [ "x${GITHUB_TOKEN}x" = xx ]; then
+if [ -z $GITHUB_TOKEN ]; then
   >&2 printf "%s\n%s\n%s\n" \
              "Please set the GITHUB_TOKEN secure environmental variable in .travis.yml:" \
              "  - secure:=\"encrypted-personal-access-token\"" \
@@ -14,7 +14,7 @@ if [ "x${GITHUB_TOKEN}x" = xx ]; then
   IS_MISSING_VARS=true
 fi
 
-if [ $IS_MISSING_VARS = true ] ; then
+if $IS_MISSING_VARS ; then
   exit 1
 fi
 

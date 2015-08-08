@@ -1,7 +1,7 @@
 #! /bin/sh
 set -e
 
-if [ x${DRYRUN}x != xx ]; then
+if [ -z $DRYRUN ]; then
   DRYRUN_REAL=echo
 fi
 
