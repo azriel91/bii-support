@@ -25,3 +25,11 @@ git status -u
 bii user $USER -p $BII_PASSWORD
 if [ -n $TRAVIS_TAG ]; then bii publish -r --tag STABLE --versiontag $TRAVIS_TAG; fi
 if [ -z $TRAVIS_TAG ]; then bii publish -r; fi
+
+
+# === Commit Repository Changes === #
+
+# A biicode publish may update biicode.conf
+# Given the user is using travis to publish the block, travis should also hold the responsibility of committing the
+# changes that are caused by biicode's publish
+$(dirname $0)/../git/commit_changes.sh
