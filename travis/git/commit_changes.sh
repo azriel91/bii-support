@@ -21,7 +21,7 @@ if [ -z $GITHUB_TOKEN ]; then
   IS_MISSING_VARS=true
 fi
 
-if $IS_MISSING_VARS ; then exit 1 fi
+if $IS_MISSING_VARS ; then exit 1; fi
 
 # If there are changes, commit them
 git config credential.helper "store --file=.git/credentials" 
