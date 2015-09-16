@@ -3,7 +3,7 @@ set -ex
 
 SCRIPT_DIR=$(dirname $0)
 
-$SCRIPT_DIR/headless.sh
+$SCRIPT_DIR/all-headless.sh
 
 # Needed to build wxwidgets
 $SCRIPT_DIR/gtk.sh
