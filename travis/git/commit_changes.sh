@@ -13,7 +13,7 @@ if [ -z $(git config user.name) ] || [ -z $(git config user.email) ] ; then
   IS_MISSING_VARS=true
 fi
 
-if [ -z $GITHUB_TOKEN ]; then
+if [ -z "${GITHUB_TOKEN}" ]; then
   >&2 printf "%s\n%s\n%s\n" \
              "Please set the GITHUB_TOKEN secure environmental variable in .travis.yml:" \
              "  - secure: \"encrypted-personal-access-token\"" \

@@ -5,7 +5,7 @@ set -e
 IS_MISSING_VARS=false
 for USER_DETAIL in USER_EMAIL USER_NAME; do
   eval VALUE=\$$USER_DETAIL
-  if [ -z $VALUE ]; then
+  if [ -z "${VALUE}" ]; then
     >&2 printf "Please set the ${USER_DETAIL} global environmental variable in .travis.yml\n"
     IS_MISSING_VARS=true
   fi

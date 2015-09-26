@@ -4,7 +4,7 @@ set -e
 # Protection if user has not defined environmental variables
 IS_MISSING_VARS=false
 
-if [ -z $BII_USER ]; then
+if [ -z "${BII_USER}" ]; then
   >&2 printf "%s\n%s\n%s\n" \
              "Please set the BII_USER environmental variable in .travis.yml:" \
              "  - BII_USER=\"username\"" \
@@ -12,7 +12,7 @@ if [ -z $BII_USER ]; then
   IS_MISSING_VARS=true
 fi
 
-if [ -z $BII_PASSWORD ]; then
+if [ -z "${BII_PASSWORD}" ]; then
   >&2 printf "%s\n%s\n%s\n" \
              "Please set the BII_PASSWORD secure environmental variable in .travis.yml:" \
              "  - secure: \"encrypted-personal-access-token\"" \
@@ -29,8 +29,8 @@ if $IS_MISSING_VARS ; then exit 1 fi
 git status -u
 
 bii user $BII_USER -p $BII_PASSWORD
-if [ -n $TRAVIS_TAG ]; then bii publish -r --tag STABLE --versiontag $TRAVIS_TAG; fi
-if [ -z $TRAVIS_TAG ]; then bii publish -r; fi
+if [ -n "${TRAVIS_TAG}" ]; then bii publish -r --tag STABLE --versiontag $TRAVIS_TAG; fi
+if [ -z "${TRAVIS_TAG}" ]; then bii publish -r; fi
 
 
 # === Commit Repository Changes === #
