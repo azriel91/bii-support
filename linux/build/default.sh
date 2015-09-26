@@ -6,7 +6,7 @@ if [ -n "${DRYRUN}" ]; then
 fi
 
 SCRIPT_DIR=$(dirname $0)
-BLOCK_DIR="${SCRIPT_DIR}/../.."
+BLOCK_DIR="${SCRIPT_DIR}/../../.."
 
 if [ -n "${BUILD_SHARED_LIBS}" ] && [ "x${BUILD_SHARED_LIBS}x" != xONx ] && [ "x${BUILD_SHARED_LIBS}x" != xOFFx ]; then
   >&2 printf "The BUILD_SHARED_LIBS variable must be either blank, or set to ON or OFF\n"
