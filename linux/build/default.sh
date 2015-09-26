@@ -26,4 +26,3 @@ if [ -n "${BUILD_SHARED_LIBS}" ]; then
 fi
 
 $DRYRUN_REAL bii build
-$DRYRUN_REAL bii build --target test
