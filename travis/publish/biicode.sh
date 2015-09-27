@@ -20,7 +20,7 @@ if [ -z "${BII_PASSWORD}" ]; then
   IS_MISSING_VARS=true
 fi
 
-if $IS_MISSING_VARS ; then exit 1 fi
+if $IS_MISSING_VARS ; then exit 1; fi
 
 # === Publish block === #
 
