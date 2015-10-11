@@ -6,6 +6,11 @@ if [ "${TRAVIS_BRANCH}" != "master" ]; then
   exit 0
 fi
 
+if [ "${TRAVIS_PULL_REQUEST}" != "false" ]; then
+  printf "Testing pull request. Skipping publish.\n"
+  exit 0
+fi
+
 # Protection if user has not defined environmental variables
 IS_MISSING_VARS=false
 
