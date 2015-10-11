@@ -15,6 +15,9 @@ if [%VALID%] == [false] (
   exit /B 1
 )
 
+:: Set the compilation tool used to compile wxwidgets
+set BII_WX_COMPILE_TOOL=Visual Studio 12 2013
+
 :: Initialize bii project if it isn't already
 if not exist "%BLOCK_DIR%\bii\settings.bii" (
   pushd %BLOCK_DIR%
