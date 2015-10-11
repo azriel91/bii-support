@@ -1,6 +1,11 @@
 #! /bin/sh
 set -e
 
+if [ "${TRAVIS_BRANCH}" != "master" ]; then
+  printf "Not on the 'master' branch. Skipping publish.\n"
+  exit 0
+fi
+
 # Protection if user has not defined environmental variables
 IS_MISSING_VARS=false
 
